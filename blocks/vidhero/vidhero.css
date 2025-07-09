@@ -1,0 +1,107 @@
+/* Container styling for the video hero block */
+.vidhero,
+.vidhero-wrapper {
+  position: relative;
+  width: 100%;
+  height: 80vh;
+  min-height:500px;
+  overflow: hidden;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+ 
+}
+
+/* The embedded background video or iframe */
+.vidhero video,
+.vidhero iframe {
+  position: absolute;
+  top: 55px; left: 0;
+  width: 100%;
+  height: 100%;
+  object-fit: cover;
+  z-index: 1;
+  border: none;
+ 
+}
+
+/* Overlay content (e.g. heading, paragraph) */
+.vidhero .hero-overlay-content {
+  position: relative;
+  z-index: 1;
+  width: 100%;
+  max-width: 520px;
+  margin: 60px auto 0;
+  color: #070707;
+  text-align: center;
+  padding: 48px 32px;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+  background: rgb(255 255 255 / 30%); /* semi-transparent white */
+  box-shadow: 0 8px 32px 0 rgb(31 38 135 / 18%);
+  backdrop-filter: blur(5px);
+  border-radius: 24px;
+}
+
+/* Headings and paragraphs with animations */
+.vidhero .hero-animated-title {
+  font-size: 2.5rem;
+  font-weight: bold;
+  letter-spacing: 2px;
+  margin-bottom: 1rem;
+  text-shadow: 0 4px 24px rgb(0 0 0 / 40%);
+  animation: fadeInDown 1s both;
+}
+
+.vidhero .hero-animated-p {
+  font-size: 1.2rem;
+  margin-bottom: 2rem;
+  text-shadow: 0 2px 8px rgb(0 0 0 / 30%);
+  animation: fadeInUp 1.2s 0.5s both;
+}
+
+/* Animations */
+@keyframes fade-in-down {
+  from {
+    opacity: 0;
+    transform: translateY(-40px);
+  }
+
+  to {
+    opacity: 1;
+    transform: translateY(0);
+  }
+}
+
+@keyframes fade-in-up {
+  from {
+    opacity: 0;
+    transform: translateY(40px);
+  }
+
+  to {
+    opacity: 1;
+    transform: translateY(0);
+  }
+}
+
+/* Responsive adjustments */
+@media (width <= 700px) {
+  .vidhero,
+  .vidhero-wrapper {
+    height: 60vh;
+    min-height: 280px;
+  }
+
+  .vidhero .hero-animated-title {
+    font-size: 1.3rem;
+  }
+
+  .vidhero .hero-overlay-content {
+    padding: 1rem;
+    max-width: 95vw;
+  }
+}
+
