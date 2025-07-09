@@ -12,7 +12,7 @@
 
 :root {
   /* colors */
-  --background-color: white;
+  --background-color:rgb(248 243 237);
   --light-color: #f8f8f8;
   --dark-color: #505050;
   --text-color: #131313;
@@ -20,8 +20,8 @@
   --link-hover-color: #1d3ecf;
 
   /* fonts */
-  --body-font-family: roboto, roboto-fallback, sans-serif;
-  --heading-font-family: roboto-condensed, roboto-condensed-fallback, sans-serif;
+  --body-font-family: 'Georgia', serif;
+  --heading-font-family:'Georgia', serif;
 
   /* body sizes */
   --body-font-size-m: 22px;
@@ -230,28 +230,31 @@ main img {
 /* sections */
 main > .section {
   margin: 40px 0;
+  box-sizing: border-box;
+  overflow-x: hidden;
 }
 
-main > .section > div {
+/* main > .section > div {
   max-width: 1200px;
   margin: auto;
   padding: 0 24px;
-}
+} */
 
 main > .section:first-of-type {
   margin-top: 0;
 }
 
-@media (width >= 900px) {
+ @media (width >= 900px) {
   main > .section > div {
-    padding: 0 32px;
-  }
-}
+    padding: 0;  }
+} 
 
 /* section metadata */
-main .section.light,
-main .section.highlight {
+
+/* main .section.light, */
+
+/* main .section.highlight {
   background-color: var(--light-color);
   margin: 0;
   padding: 40px 0;
-}
+} */
