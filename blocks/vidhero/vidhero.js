@@ -5,7 +5,7 @@ export default async function decorate(block) {
 
   // Create the <video> element
   const video = document.createElement('video');
-  video.src = './assets/vid.mov'; // Replace with your actual video path
+  video.src = 'assets/vid.mov'; // Replace with your actual video path
   video.autoplay = true;
   video.muted = true;
   video.loop = true;
