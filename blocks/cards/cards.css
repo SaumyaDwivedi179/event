@@ -1,27 +1,349 @@
-.cards > ul {
-  list-style: none;
-  margin: 0;
-  padding: 0;
+/* .section.highlight.cards-container {
+  padding: 40px;
+  background-color: #ffffff;
+  font-family: 'Georgia', serif;
+  color: #653950;
+} */
+
+ 
+  .cards-container > .default-content-wrapper h2 {
+  /* display: inline-flex; */
+  text-align: center;
+
+  /* align-items: center; */
+  gap: 15px;
+  font-size: 2.5rem;
+  color: #604652;
+  position: relative;
+ 
+}
+
+.cards-container>.default-content-wrapper p {
+  text-align: center;
+  color: #a21e88;
+  margin-bottom: 40px;
+  font-size: 1rem;
+} 
+
+.cards-wrapper {
+  display: flex;
+  justify-content: center;
+}
+
+
+
+.cards.block ul {
   display: grid;
-  grid-template-columns: repeat(auto-fill, minmax(257px, 1fr));
-  grid-gap: 24px;
+  grid-template-columns: repeat(auto-fit, minmax(280px, 1fr));
+  gap: 30px;
+  padding: 0;
+  margin: 0;
+  list-style: none;
 }
 
-.cards > ul > li {
-  border: 1px solid #dadada;
-  background-color: var(--background-color);
+.cards.block ul > li {
+  background-color: #caa6a6;
+  border-radius: 16px;
+  overflow: hidden;
+  box-shadow: 0 4px 10px rgb(0 0 0 / 8%);
+  transition: transform 0.3s ease;
+  display: flex;
+  flex-direction: column;
 }
 
-.cards .cards-card-body {
-  margin: 16px;
+.cards.block ul > li:hover {
+  transform: translateY(-6px);
 }
 
-.cards .cards-card-image {
-  line-height: 0;
-}
 
-.cards > ul > li img {
+ .cards-card-image img{
   width: 100%;
-  aspect-ratio: 4 / 3;
+  height: 300px;
   object-fit: cover;
+  display: block;
+  border-radius: 16px 16px 0 0;
+ }
+
+/* Text content assumed inside li if there are no images */
+.cards.block ul > li > *:not(:first-child) {
+  padding: 30px;
+  font-size: 0.95rem;
+  color: #4a3b3b;
 }
+
+.cards.tech>ul {
+  display: flex;
+  justify-content: center;
+  gap: 20px;
+}
+
+.cards.tech>ul>li>div>p:nth-child(1) {
+ font-size: 2rem;
+  color: #653950;
+  font-weight: bold;
+  margin: unset;
+  
+}
+
+.cards.tech>ul>li>div>p:nth-child(2){
+  font-size: 1.2rem;
+  color: #7a6b6b;
+  margin: unset;
+  margin-top: 10px;
+
+}
+
+.cards.tech>ul>li>div>p:nth-child(3),
+.cards.tech>ul>li>div>p:nth-child(4),
+.cards.tech>ul>li>div>p:nth-child(5) {
+  font-size: 1rem;
+  color: #7a6b6b;
+  margin: unset;
+  margin-top: 10px;
+}
+
+.cards.tech a.button.secondary{
+  width: 100%;
+  padding: 15px;
+  background: linear-gradient(45deg, #97866A, #D29F80);
+  border: none;
+  border-radius: 10px;
+  color: white;
+  font-weight: bold;
+  font-size: 16px;
+  cursor: pointer;
+  position: relative;
+  overflow: hidden;
+  transition: all 0.3s ease;
+}
+
+.cards.tech a.button.secondary::before{
+  content: '';
+  position: absolute;
+  top: 50%;
+  left: 50%;
+  width: 0;
+  height: 0;
+  background: rgb(255 255 255 / 30%);
+  border-radius: 50%;
+  transform: translate(-50%, -50%);
+  transition: width 0.6s, height 0.6s;
+}
+
+.cards.tech a.button.secondary:hover::before {
+  width: 300px;
+  height: 300px;
+}
+
+.cards.tech a.button.secondary:hover {
+ transform: translateY(-3px);
+  box-shadow: 0 10px 30px rgb(151 134 106 / 40%);
+}
+
+.cards-container>.default-content-wrapper> h1{
+   color: #653950;
+  font-size: 2.5rem;
+  margin-top: 5rem;
+  margin-bottom: 2px;
+} 
+
+
+
+/* Cards grid styling */
+.cards.contactcard.block ul {
+  display: flex;
+  flex-wrap: nowrap;
+  justify-content: center;
+  gap: 40px;
+  padding: 0;
+  margin: 40px auto;
+  max-width: 1200px;
+  list-style: none;
+}
+
+/* Individual card styling */
+.cards.contactcard.block ul li {
+  flex: 1 1 250px;
+  max-width: 700px;
+  background: #fff;
+  border-radius: 16px;
+  box-shadow: 0 10px 30px rgb(0 0 0 / 8%);
+  padding: 30px 20px;
+  transition: transform 0.3s ease;
+  text-align: center;
+}
+
+.cards.contactcard.block ul li:hover {
+  transform: translateY(-10px);
+}
+
+
+
+/* Style second row (bottom stats cards) same as top row cards */
+.cards-wrapper:last-of-type .cards.contactcard.block ul {
+  justify-content: center;
+  gap: 50px;
+  padding-top: 20px;
+}
+
+/* Base style for all cards */
+.cards.contactcard.block ul li .cards-card-body {
+  position: relative;
+}
+
+.cards.contactcard.block ul li:has(.cards-card-body:nth-child(1)) .cards-card-body:empty {
+  position: absolute;
+  border-radius: 50%;
+  background: rgb(210 159 128 / 20%);
+  animation: float 6s ease-in-out infinite;
+  z-index: -1;
+}
+
+.cards.contactcard.block ul li:has(.cards-card-body:nth-child(4)) .cards-card-body:empty {
+  position: absolute;
+  border-radius: 50%;
+  background: rgb(210 159 128 / 20%);
+  animation: float 6s ease-in-out infinite;
+  z-index: -1;
+}
+
+/* Apply different positions and animation delays to each circle */
+.cards.contactcard.block ul li:has(.cards-card-body:nth-child(1)) .cards-card-body:empty:nth-of-type(1) {
+  width: 100px;
+  height: 100px;
+  bottom: 20%;
+  right: 10%;
+  animation-delay: 0s;
+}
+
+.cards.contactcard.block ul li:has(.cards-card-body:nth-child(1)) .cards-card-body:empty:nth-of-type(2) {
+  width: 150px;
+  height: 150px;
+  bottom: 80%;
+  left: 15%;
+  animation-delay: 2s;
+}
+
+.cards.contactcard.block ul li:has(.cards-card-body:nth-child(1)) .cards-card-body:empty:nth-of-type(3) {
+  width: 80px;
+  height: 80px;
+  top: 50%;
+  right: 60%;
+  animation-delay: 4s;
+}
+
+.cards.contactcard.block ul li:has(.cards-card-body:nth-child(1)) .cards-card-body:empty:nth-of-type(4) {
+  width: 120px;
+  height: 120px;
+  bottom: 10%;
+  left: 25%;
+  animation-delay: 1s;
+}
+
+/* Floating animation keyframes */
+@keyframes float {
+  0%, 100% {
+    transform: translateY(0) scale(1);
+  }
+
+  50% {
+    transform: translateY(-30px) scale(1.1);
+  }
+}
+
+
+
+
+
+
+
+
+/* Target only the cards-card-body inside li that has 4+ cards-card-body divs (the "bubble li") */
+
+
+/* Apply different positions and animation delays to each circle */
+.cards.contactcard.block ul li:has(.cards-card-body:nth-child(4)) .cards-card-body:empty:nth-of-type(1) {
+  width: 100px;
+  height: 100px;
+  top: 20%;
+  left: 10%;
+  animation-delay: 0s;
+}
+
+.cards.contactcard.block ul li:has(.cards-card-body:nth-child(4)) .cards-card-body:empty:nth-of-type(2) {
+  width: 150px;
+  height: 150px;
+  top: 80%;
+  right: 15%;
+  animation-delay: 2s;
+}
+
+.cards.contactcard.block ul li:has(.cards-card-body:nth-child(4)) .cards-card-body:empty:nth-of-type(3) {
+  width: 80px;
+  height: 80px;
+  bottom: 50%;
+  left: 60%;
+  animation-delay: 4s;
+}
+
+.cards.contactcard.block ul li:has(.cards-card-body:nth-child(4)) .cards-card-body:empty:nth-of-type(4) {
+  width: 120px;
+  height: 120px;
+  top: 10%;
+  right: 25%;
+  animation-delay: 1s;
+}
+
+/* Floating animation keyframes */
+@keyframes float {
+  0%, 100% {
+    transform: translateY(0) scale(1);
+  }
+
+  50% {
+    transform: translateY(-30px) scale(1.1);
+  }
+}
+
+
+
+
+
+
+
+.modal-overlay {
+  position: fixed;
+  top: 0;
+  left: 0;
+  width: 100vw;
+  height: 100vh;
+  background: rgb(0 0 0 / 70%);
+  display: none;
+  align-items: center;
+  justify-content: center;
+  z-index: 9999;
+}
+
+.modal-content {
+  background: white;
+  padding: 30px;
+  max-width: 600px;
+  width: 90%;
+  border-radius: 10px;
+  position: relative;
+  max-height: 90vh;
+  overflow-y: auto;
+}
+
+.modal-close {
+  position: absolute;
+  top: 10px;
+  right: 15px;
+  background: none;
+  border: none;
+  font-size: 24px;
+  cursor: pointer;
+}
+
+/* Style for active filter tab */
+
