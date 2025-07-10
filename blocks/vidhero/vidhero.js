@@ -10,7 +10,7 @@ export default async function decorate(block) {
   // Create the <video> element
   const video = document.createElement('video');
   // <iframe src="https://drive.google.com/file/d/1kDpfLFM7grVcY7nr-kIebZUs7opkzoWk/view?usp=drive_link></iframe>
-  video.src = 'https://landing-page--event--saumyadwivedi179.aem.page/blocks/vidhero/SampleVideo_1280x720_1mb.mp4'; // Replace with your actual video path
+  video.src = 'blocks/vidhero/SampleVideo_1280x720_1mb.mp4'; // Replace with your actual video path
    video.autoplay = true;
   video.muted = true;
   video.loop = true;
