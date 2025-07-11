@@ -12,6 +12,7 @@
   width: 100%;
   padding: 0;
   margin: 0;
+   animation: fadeIn 0.6s ease-in-out both;
 }
 
 .spacebook.block > div > div:first-child {
@@ -38,7 +39,7 @@
   max-width: 900px;
   margin-left: auto;
   margin-right: auto;
-  box-shadow: 0 8px 30px rgba(0, 0, 0, 0.1);
+  box-shadow: 0 8px 30px rgb(0 0 0 / 10%);
   position: relative;
   z-index: 2;
   border-radius: 12px;
@@ -91,12 +92,10 @@
 }
 
 /* Smooth fade-in animation */
-.spacebook.block > div {
-  animation: fadeIn 0.6s ease-in-out both;
-}
 
 
-@media (max-width: 768px) {
+
+@media (width <= 768px) {
   .spacebook.block > div > div:last-child {
     padding: 20px;
     margin-top: -10px;
@@ -104,11 +103,12 @@
 }
 
 /* Fade-in keyframes */
-@keyframes fadeIn {
+@keyframes fade-in {
   from {
     opacity: 0;
     transform: translateY(30px);
   }
+
   to {
     opacity: 1;
     transform: translateY(0);

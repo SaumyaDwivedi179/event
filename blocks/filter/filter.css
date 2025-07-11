@@ -1,7 +1,7 @@
 .filter.block{
 /* background:  rgba(151, 134, 106, 0.05); */
 height: 80px;
-border-bottom: 1px solid rgba(151, 134, 106, 0.2);
+border-bottom: 1px solid rgb(151 134 106 / 20%);
  
 }
 
@@ -22,7 +22,7 @@ border-bottom: 1px solid rgba(151, 134, 106, 0.2);
   color: #604652;
   border-radius: 25px;
   font-weight: bold;
-  font-family: 'Georgia', serif;
+  font-family: Georgia, serif;
   cursor: pointer;
   transition: all 0.3s ease;
   position: relative;
@@ -38,6 +38,11 @@ border-bottom: 1px solid rgba(151, 134, 106, 0.2);
 /* Optional text container */
 .filter > div > * > p {
   margin: 0;
+
+ .filter > div > * > p {
+  position: relative;
+  z-index: 1;
+}
 }
 
 /* Gradient hover sweep */
@@ -48,7 +53,7 @@ border-bottom: 1px solid rgba(151, 134, 106, 0.2);
   left: -100%;
   width: 100%;
   height: 100%;
-  background: linear-gradient(90deg, transparent, rgba(151, 134, 106, 0.3), transparent);
+  background: linear-gradient(90deg, transparent, rgb(151 134 106 / 30%), transparent);
   transition: left 0.5s;
   z-index: 0;
 }
@@ -64,18 +69,15 @@ border-bottom: 1px solid rgba(151, 134, 106, 0.2);
   background: #97866A;
   color: white;
   transform: translateY(-2px);
-  box-shadow: 0 5px 15px rgba(151, 134, 106, 0.3);
+  box-shadow: 0 5px 15px rgb(151 134 106 / 30%);
   z-index: 1;
 }
 
 /* Ensure text stays above the ::before layer */
-.filter > div > * > p {
-  position: relative;
-  z-index: 1;
-}
+
 
 /* ---------- Tablet Devices (max-width: 768px) ---------- */
-@media (max-width: 768px) {
+@media (width <= 768px) {
   .filter.block {
     height: auto;
     padding: 10px 0;
@@ -95,7 +97,7 @@ border-bottom: 1px solid rgba(151, 134, 106, 0.2);
 }
 
 /* ---------- Mobile Devices (max-width: 480px) ---------- */
-@media (max-width: 480px) {
+@media (width <= 480px) {
   .filter.block > div {
     gap: 10px;
   }

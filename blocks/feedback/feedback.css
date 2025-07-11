@@ -6,7 +6,7 @@
   justify-content: center;
   align-items: flex-start;
   gap: 60px;
-  font-family: 'Georgia', serif;
+  font-family: Georgia, serif;
   flex-wrap: wrap;
   height: 100%;
 }
@@ -34,6 +34,7 @@
   line-height: 1.6;
   text-decoration: none;
 }
+
 .feedback-wrapper p>a{
   font-size: 0.95rem;
   margin: 0;
