@@ -38,13 +38,21 @@ function initLoginModal() {
     });
 
     formBlock.style.display = 'none';
+
+    // ✅ Move <h2 id="signup"> into the modal
+    const heading = document.querySelector('#signup');
+    if (heading) {
+      heading.remove();
+      modalContent.appendChild(heading);
+    }
+
     modalContent.appendChild(closeBtn);
     modalContent.appendChild(formBlock);
     modalOverlay.appendChild(modalContent);
     document.body.appendChild(modalOverlay);
 
     const loginNavItem = Array.from(document.querySelectorAll('nav ul li')).find(
-      (li) => li.textContent.trim().toLowerCase() === 'login',
+      (li) => li.textContent.trim().toLowerCase() === 'signup',
     );
 
     if (loginNavItem) {
@@ -103,43 +111,7 @@ function toggleMenu(nav, navSections, forceExpanded = null) {
       drop.removeEventListener('focus', focusNavSection);
     });
   }
-
-  // if (!expanded || isDesktop.matches) {
-  //   window.addEventListener('keydown', closeOnEscape);
-  //   nav.addEventListener('focusout', closeOnFocusLost);
-  // } else {
-  //   window.removeEventListener('keydown', closeOnEscape);
-  //   nav.removeEventListener('focusout', closeOnFocusLost);
-  // }
 }
-
-// function closeOnFocusLost(e) {
-//   const nav = e.currentTarget;
-//   if (!nav.contains(e.relatedTarget)) {
-//     const navSections = nav.querySelector('.nav-sections');
-//     const navSectionExpanded = navSections.querySelector('[aria-expanded="true"]');
-//     if (navSectionExpanded && isDesktop.matches) {
-//       toggleAllNavSections(navSections, false);
-//     } else if (!isDesktop.matches) {
-//       toggleMenu(nav, navSections, false);
-//     }
-//   }
-// }
-
-// function closeOnEscape(e) {
-//   if (e.code === 'Escape') {
-//     const nav = document.getElementById('nav');
-//     const navSections = nav.querySelector('.nav-sections');
-//     const navSectionExpanded = navSections.querySelector('[aria-expanded="true"]');
-//     if (navSectionExpanded && isDesktop.matches) {
-//       toggleAllNavSections(navSections);
-//       navSectionExpanded.focus();
-//     } else if (!isDesktop.matches) {
-//       toggleMenu(nav, navSections);
-//       nav.querySelector('button').focus();
-//     }
-//   }
-// }
 
 export default async function decorate(block) {
   const navMeta = getMetadata('nav');

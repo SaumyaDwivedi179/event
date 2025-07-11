@@ -1,0 +1,53 @@
+/* Main Container */
+.feedback-container {
+  background: #5f4652;
+  padding: 38px 50px;
+  display: flex;
+  justify-content: center;
+  align-items: flex-start;
+  gap: 60px;
+  font-family: 'Georgia', serif;
+  flex-wrap: wrap;
+  height: 100%;
+}
+
+/* Contact Info Side (Left) */
+.feedback-wrapper {
+  flex: 1 1 35%;
+  display: flex;
+  flex-direction: column;
+  gap: 20px;
+  color: #f5d7b5;
+}
+
+.feedback-wrapper h1 {
+  font-size: 2.5rem;
+  color: #f5b985;
+  font-weight: bold;
+  margin-bottom: 10px;
+}
+
+.feedback-wrapper p {
+  font-size: 0.95rem;
+  margin: 0;
+  color: #ddd;
+  line-height: 1.6;
+  text-decoration: none;
+}
+.feedback-wrapper p>a{
+  font-size: 0.95rem;
+  margin: 0;
+  color: #ddd;
+  line-height: 1.6;
+  text-decoration: none;
+}
+
+.feedback-wrapper h4 {
+  font-size: 1rem;
+  font-weight: bold;
+  margin: 15px 0 5px;
+  color: #f8dcb4;
+}
+
+
+

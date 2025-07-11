@@ -3,7 +3,7 @@ import { loadFragment } from '../fragment/fragment.js';
 
 /**
  * loads and decorates the footer
- * @param {Element} block The footer block element
+ * @param {Element} block
  */
 export default async function decorate(block) {
   // load footer as fragment

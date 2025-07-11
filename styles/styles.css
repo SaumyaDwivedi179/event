@@ -12,12 +12,12 @@
 
 :root {
   /* colors */
-  --background-color:rgb(248 243 237);
+  --background-color:rgb(249 236 221);
   --light-color: #f8f8f8;
   --dark-color: #505050;
   --text-color: #131313;
-  --link-color: #3b63fb;
-  --link-hover-color: #1d3ecf;
+  --link-color: #5D3E47;
+  --link-hover-color: #4f2f34;
 
   /* fonts */
   --body-font-family: 'Georgia', serif;
@@ -205,9 +205,10 @@ button:disabled:hover {
 
 a.button.secondary,
 button.secondary {
-  background-color: unset;
-  border: 2px solid currentcolor;
-  color: var(--text-color);
+  background-color:#604652;
+
+  /* border: 2px solid currentcolor; */
+  color: var(--light-color);
 }
 
 main img {

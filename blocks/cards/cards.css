@@ -1,12 +1,4 @@
-/* .section.highlight.cards-container {
-  padding: 40px;
-  background-color: #ffffff;
-  font-family: 'Georgia', serif;
-  color: #653950;
-} */
-
- 
-  .cards-container > .default-content-wrapper h2 {
+   .cards-container > .default-content-wrapper h2 {
   /* display: inline-flex; */
   text-align: center;
 
@@ -30,18 +22,18 @@
   justify-content: center;
 }
 
-
-
 .cards.block ul {
-  display: grid;
-  grid-template-columns: repeat(auto-fit, minmax(280px, 1fr));
+  display: flex;
+  flex-wrap: wrap;
   gap: 30px;
-  padding: 0;
+  padding: 0 1rem;
   margin: 0;
   list-style: none;
+  
 }
 
 .cards.block ul > li {
+  flex: 1 0 300px;
   background-color: #caa6a6;
   border-radius: 16px;
   overflow: hidden;
@@ -66,16 +58,12 @@
 
 /* Text content assumed inside li if there are no images */
 .cards.block ul > li > *:not(:first-child) {
-  padding: 30px;
+  padding: 0 20px;
   font-size: 0.95rem;
   color: #4a3b3b;
 }
 
-.cards.tech>ul {
-  display: flex;
-  justify-content: center;
-  gap: 20px;
-}
+
 
 .cards.tech>ul>li>div>p:nth-child(1) {
  font-size: 2rem;
@@ -87,7 +75,7 @@
 
 .cards.tech>ul>li>div>p:nth-child(2){
   font-size: 1.2rem;
-  color: #7a6b6b;
+  color:#4a3b3b;
   margin: unset;
   margin-top: 10px;
 
@@ -97,7 +85,7 @@
 .cards.tech>ul>li>div>p:nth-child(4),
 .cards.tech>ul>li>div>p:nth-child(5) {
   font-size: 1rem;
-  color: #7a6b6b;
+  color: #4a3b3b;
   margin: unset;
   margin-top: 10px;
 }
@@ -147,9 +135,6 @@
   margin-bottom: 2px;
 } 
 
-
-
-/* Cards grid styling */
 .cards.contactcard.block ul {
   display: flex;
   flex-wrap: nowrap;
@@ -165,10 +150,10 @@
 .cards.contactcard.block ul li {
   flex: 1 1 250px;
   max-width: 700px;
-  background: #fff;
+  background: #c4a0a0;
   border-radius: 16px;
   box-shadow: 0 10px 30px rgb(0 0 0 / 8%);
-  padding: 30px 20px;
+  padding: 30px 60px;
   transition: transform 0.3s ease;
   text-align: center;
 }
@@ -252,15 +237,6 @@
 }
 
 
-
-
-
-
-
-
-/* Target only the cards-card-body inside li that has 4+ cards-card-body divs (the "bubble li") */
-
-
 /* Apply different positions and animation delays to each circle */
 .cards.contactcard.block ul li:has(.cards-card-body:nth-child(4)) .cards-card-body:empty:nth-of-type(1) {
   width: 100px;
@@ -306,35 +282,43 @@
 }
 
 
-
-
-
-
-
 .modal-overlay {
   position: fixed;
   top: 0;
   left: 0;
   width: 100vw;
-  height: 100vh;
-  background: rgb(0 0 0 / 70%);
+  max-height: 100vh;
+  background: rgb(74 61 61 / 10%);
+  backdrop-filter: blur(10px);
   display: none;
   align-items: center;
   justify-content: center;
   z-index: 9999;
+  overflow: hidden;
 }
-
+ 
 .modal-content {
-  background: white;
+  background:#caa6a6;
+  backdrop-filter: blur(10px);
   padding: 30px;
   max-width: 600px;
-  width: 90%;
+  width:37%;
   border-radius: 10px;
   position: relative;
-  max-height: 90vh;
-  overflow-y: auto;
+  max-height: 100vh;
+  overflow: hidden ;
+  margin-top: 25px;
+  
+ }
+ 
+ .modal-content h2#signup {
+  margin-top: 0;
+  font-size: 1.75rem;
+  margin-bottom: 1rem;
+  text-align: center;
+  color: #5f3247;
 }
-
+ 
 .modal-close {
   position: absolute;
   top: 10px;
@@ -343,7 +327,95 @@
   border: none;
   font-size: 24px;
   cursor: pointer;
+  color: #e0d8d3;
+}
+ 
+/* ---------- Tablet Devices (768px and below) ---------- */
+@media (width <= 768px) {
+  .cards-wrapper,
+  .cards.block ul,
+  .cards.contactcard.block ul {
+    flex-direction: column;
+    align-items: center;
+  }
+
+  .cards.block ul > li,
+  .cards.contactcard.block ul li {
+    flex: 1 1 100%;
+    max-width: 90%;
+    padding: 20px;
+  }
+
+  .cards-container > .default-content-wrapper h1 {
+    font-size: 2rem;
+  }
+
+  .cards-container > .default-content-wrapper p {
+    font-size: 0.95rem;
+    margin-bottom: 30px;
+  }
+
+  .cards.tech a.button.secondary {
+    font-size: 15px;
+    padding: 12px;
+  }
+
+  .modal-content {
+    width: 85%;
+    padding: 20px;
+  }
+
+  .modal-content h2#signup {
+    font-size: 1.5rem;
+  }
 }
 
-/* Style for active filter tab */
+/* ---------- Mobile Devices (480px and below) ---------- */
+@media (width <= 480px) {
+  .cards-container > .default-content-wrapper h2 {
+    font-size: 1.8rem;
+  }
 
+  .cards-container > .default-content-wrapper p {
+    font-size: 0.9rem;
+  }
+
+  .cards.block ul > li,
+  .cards.contactcard.block ul li {
+    padding: 15px;
+    max-width: 95%;
+  }
+
+  .cards.tech>ul>li>div>p:nth-child(1) {
+    font-size: 1.5rem;
+  }
+
+  .cards.tech>ul>li>div>p:nth-child(2),
+  .cards.tech>ul>li>div>p:nth-child(3),
+  .cards.tech>ul>li>div>p:nth-child(4),
+  .cards.tech>ul>li>div>p:nth-child(5) {
+    font-size: 1rem;
+  }
+
+  .cards.tech a.button.secondary {
+    font-size: 14px;
+    padding: 10px;
+  }
+
+  .cards-card-image img {
+    height: 200px;
+  }
+
+  .modal-content {
+    width: 90%;
+    padding: 15px;
+  }
+
+  .modal-content h2#signup {
+    font-size: 1.3rem;
+  }
+
+  .modal-close {
+    font-size: 20px;
+  }
+}

@@ -1,0 +1,141 @@
+.contact-wrapper{
+   background: linear-gradient(135deg, #604652 0%, #735557 50%, #97866A 100%);
+  height: 60vh;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  position: relative;
+  overflow: hidden;
+  margin-top: 40px;
+ 
+ 
+}
+
+.contact{
+  text-align: center;
+  z-index: 1;
+  position: relative;
+}
+
+.contact h1{
+  font-size: 4rem;
+  color: white;
+  margin-bottom: 20px;
+  font-weight: bold;
+}
+
+.contact>div>div{
+  display: flex;
+  justify-content: space-evenly; 
+  opacity:1;
+  transform: translateY(50px) rotateX(90deg);
+  animation: wordReveal 0.8s forwards;
+  margin-right: 20px;
+  gap: 50px;
+}
+
+.contact>div>div:nth-child(1) { animation-delay: 0.2s; }
+.contact>div>div:nth-child(2) { animation-delay: 0.6s; }
+.contact>div>div:nth-child(3) { animation-delay: 1.0s; }
+
+@keyframes wordReveal {
+  to {
+    opacity: 1;
+    transform: translateY(0) rotateX(0deg);
+  }
+}
+
+.contact>div:nth-child(2){
+  position: absolute;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
+  pointer-events: none;
+}
+
+.contact > div:nth-child(2) > div {
+  position: absolute;
+  border-radius: 50%;
+  background: rgba(210, 159, 128, 0.2);
+  animation: float 6s ease-in-out infinite;
+}
+
+.contact > div:nth-child(2) > div:nth-child(1) { width: 100px;
+  height: 100px;
+  top: 20%;
+  left: 10%;
+  animation-delay: 0s; }
+.contact > div:nth-child(2) > div:nth-child(2) { width: 150px;
+  height: 150px;
+  top: 80%;
+  right: 15%;
+  animation-delay: 2s;}
+.contact > div:nth-child(2) > div:nth-child(3) { width: 80px;
+  height: 80px;
+  bottom: 50%;
+  left: 60%;
+  animation-delay: 4s; }
+
+  @keyframes float {
+  0%, 100% {
+    transform: translateY(0px) scale(1);
+  }
+  50% {
+    transform: translateY(-30px) scale(1.1);
+  }
+}
+
+/* ---------- Tablet Devices (max-width: 768px) ---------- */
+@media (max-width: 768px) {
+  .contact-wrapper {
+    height: auto;
+    padding: 40px 20px;
+    flex-direction: column;
+  }
+
+  .contact h1 {
+    font-size: 2.5rem;
+    margin-bottom: 15px;
+  }
+
+  .contact > div > div {
+    flex-direction: column;
+    gap: 20px;
+    margin-right: 0;
+    align-items: center;
+  }
+
+  .contact > div:nth-child(2) > div:nth-child(1),
+  .contact > div:nth-child(2) > div:nth-child(2),
+  .contact > div:nth-child(2) > div:nth-child(3) {
+    display: none; /* Hide floating circles for better performance on mobile */
+  }
+}
+
+/* ---------- Mobile Devices (max-width: 480px) ---------- */
+@media (max-width: 480px) {
+  .contact-wrapper {
+    padding: 30px 15px;
+  }
+
+  .contact h1 {
+    font-size: 2rem;
+  }
+
+  .contact > div > div {
+    gap: 15px;
+  }
+}
+
+
+
+
+
+
+
+
+
+
+
+

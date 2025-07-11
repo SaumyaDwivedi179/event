@@ -34,14 +34,19 @@
 }
 
 /* Form Fields */
+.form label,
+.form fieldset > legend {
+  margin-bottom: 0.25em;
+  font-size: var(--body-font-size-s);
+  font-weight: 700;
+}
 
-
-.form-wrapper label {
+.form .field-wrapper label {
   font-size: 0.95rem;
   font-weight: 600;
   margin-bottom: 8px;
   display: block;
-  color: #e6dcd2;
+  color: #252524;
 }
 
 .form-wrapper input,
@@ -59,9 +64,6 @@
 .form input,
 .form select,
 .form textarea {
-  /* box-sizing: border-box; */
-
-  /* display: block; */
   width: 100%;
   margin: 0;
 
@@ -140,12 +142,7 @@
   }
 }
 
-.form label,
-.form fieldset > legend {
-  margin-bottom: 0.25em;
-  font-size: var(--body-font-size-s);
-  font-weight: 700;
-}
+
 
 .form .selection-wrapper label {
   margin: 0;

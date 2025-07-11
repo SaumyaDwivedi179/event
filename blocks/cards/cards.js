@@ -16,16 +16,13 @@ export default function decorate(block) {
     ul.append(li);
   });
 
-  // Replace images with optimized pictures
   ul.querySelectorAll('picture > img').forEach((img) => img.closest('picture').replaceWith(
     createOptimizedPicture(img.src, img.alt, false, [{ width: '750' }]),
   ));
 
-  // Clear and append new content
   block.textContent = '';
   block.append(ul);
 
-  // Filter logic
   const filterContainer = document.querySelector('.filter.block');
   const sections = document.querySelectorAll('.cards-container');
 
@@ -36,12 +33,10 @@ export default function decorate(block) {
 
       const clickedDiv = clickedP.parentElement;
 
-      // Remove 'active' from all filter divs
       filterContainer.querySelectorAll('div > div').forEach((div) => {
         div.classList.remove('active');
       });
 
-      // Add 'active' class to the clicked div
       clickedDiv.classList.add('active');
 
       const selected = clickedP.textContent.trim().toLowerCase();
@@ -85,7 +80,6 @@ function waitForFormLoad(selector, callback) {
 
 function initBookModal() {
   waitForFormLoad('.form.bookform.block', (formBlock) => {
-    // Create modal wrapper
     const modalOverlay = document.createElement('div');
     modalOverlay.className = 'modal-overlay';
 
@@ -102,14 +96,13 @@ function initBookModal() {
       document.body.style.overflow = '';
     });
 
-    formBlock.style.display = 'none'; // Hide initially
+    formBlock.style.display = 'none';
     modalContent.appendChild(closeBtn);
     modalContent.appendChild(formBlock);
     modalOverlay.appendChild(modalContent);
     document.body.appendChild(modalOverlay);
 
-    // Add event listeners to book buttons
-    document.querySelectorAll('a.button[title="book"]').forEach((btn) => {
+    document.querySelectorAll('a.button[title="Book Now"]').forEach((btn) => {
       btn.addEventListener('click', (e) => {
         e.preventDefault();
         modalOverlay.style.display = 'flex';
@@ -118,7 +111,6 @@ function initBookModal() {
       });
     });
 
-    // Close when clicking outside modal
     modalOverlay.addEventListener('click', (e) => {
       if (e.target === modalOverlay) {
         modalOverlay.style.display = 'none';

@@ -63,7 +63,7 @@
 }
 
 .carousel .button:hover {
-  background-color: rgb(255 255 255 / 10%); /* subtle hover effect */
+  background-color: rgb(157 97 104); /* subtle hover effect */
 }
 
 .carousel-slide-image {
@@ -168,9 +168,7 @@
   }
 }
 
- /* Carousel Slide Image */
-
-/* Make the image fill the container */
+ 
 
 
 /* Overlay text on top of the image */
@@ -191,8 +189,8 @@
 
 .carousel-slide-image > *:not(:first-child) {
   position: absolute;
-  top: 20px; /* adjust as needed */
-  left: 20px; /* adjust as needed */
+  top: 20px; 
+  left: 20px; 
   background: rgb(246 225 206 / 95%);
   padding: 20px 30px;
   max-width: 300px;
@@ -203,16 +201,14 @@
   border-radius: 8px;
   z-index: 2;
 
-  /* Stack overlays vertically with spacing */
-
-  /* You can use nth-child to offset each if needed */
+ 
 }
 
-/* If you want each overlay to appear below the previous, add: */
+
 .carousel-slide-image > *:nth-child(3) { top: 90px; }
 .carousel-slide-image > *:nth-child(4) { top: 160px; }
 
-/* ...and so on, or use JS for dynamic stacking if needed */
+
 
 /* Responsive */
 @media (width <= 768px) {
@@ -302,6 +298,75 @@
   background-color: #604652;
   align-items: center;
   gap:30px;
+  color: rgb(181 134 80);
   
 }
 
+@media (width <= 1024px) {
+  .carousel-container .default-content-wrapper {
+    padding: 40px 20px;
+    gap: 24px;
+  }
+
+  .second .carousel-slide-content {
+    padding: 30px 20px;
+  }
+
+  .second .carousel-slide-content h2 {
+    font-size: 1.75rem;
+  }
+
+  .second .carousel-slide-content p {
+    font-size: 1rem;
+  }
+
+  .second .carousel-slide-content span {
+    font-size: 0.85rem;
+  }
+}
+
+@media (width <= 768px) {
+  .carousel-container .default-content-wrapper {
+    padding: 30px 15px;
+    gap: 20px;
+  }
+
+  .second .carousel-slide-content {
+    padding: 25px 15px;
+  }
+
+  .second .carousel-slide-content h2 {
+    font-size: 1.5rem;
+  }
+
+  .second .carousel-slide-content p {
+    font-size: 0.95rem;
+  }
+
+  .second .carousel-slide-content span {
+    font-size: 0.8rem;
+  }
+}
+
+@media (width <= 480px) {
+  .carousel-container .default-content-wrapper {
+    padding: 20px 10px;
+    gap: 16px;
+  }
+
+  .second .carousel-slide-content {
+    padding: 20px 10px;
+  }
+
+  .second .carousel-slide-content h2 {
+    font-size: 1.3rem;
+  }
+
+  .second .carousel-slide-content p {
+    font-size: 0.9rem;
+  }
+
+  .second .carousel-slide-content span {
+    font-size: 0.75rem;
+  }
+}

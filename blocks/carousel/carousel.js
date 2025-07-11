@@ -17,18 +17,6 @@ function updateActiveSlide(slide) {
       }
     });
   });
-
-  //  Update indicator active state
-  /*
-  const indicators = block.querySelectorAll('.carousel-slide-indicator');
-  indicators.forEach((indicator, idx) => {
-    if (idx !== slideIndex) {
-      indicator.querySelector('button').removeAttribute('disabled');
-    } else {
-      indicator.querySelector('button').setAttribute('disabled', 'true');
-    }
-  });
-  */
 }
 
 function showSlide(block, slideIndex = 0) {
@@ -46,19 +34,6 @@ function showSlide(block, slideIndex = 0) {
 }
 
 function bindEvents(block) {
-  //  Slide indicator button click events
-  /*
-  const slideIndicators = block.querySelector('.carousel-slide-indicators');
-  if (slideIndicators) {
-    slideIndicators.querySelectorAll('button').forEach((button) => {
-      button.addEventListener('click', (e) => {
-        const slideIndicator = e.currentTarget.parentElement;
-        showSlide(block, parseInt(slideIndicator.dataset.targetSlide, 10));
-      });
-    });
-  }
-  */
-
   block.querySelector('.slide-prev').addEventListener('click', () => {
     showSlide(block, parseInt(block.dataset.activeSlide, 10) - 1);
   });

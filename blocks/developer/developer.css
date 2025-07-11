@@ -1,0 +1,122 @@
+/* === Default: Desktop (>=1025px) === */
+.developer-wrapper {
+  margin: 40px auto;
+  padding: 30px;
+  background-color: #977786;
+  font-family: 'Segoe UI', sans-serif;
+  box-shadow: 0 4px 12px rgba(0,0,0,0.1);
+  border-radius: 12px;
+  width: 80%;
+}
+
+.default-content-wrapper h2 {
+  text-align: center;
+  font-size: 3rem;
+  color: #97866A;
+  font-weight: bold;
+}
+
+.developer.block > div {
+  display: flex;
+  flex-wrap: nowrap;
+  gap: 120px;
+  height: 400px;
+}
+
+.developer.block > div > div:first-child picture img {
+  width: 500px;
+  height: 200px;
+  object-fit: cover;
+  border-radius: 50%;
+  margin: 50px 20px;
+}
+
+.developer.block > div > div:last-child h1#saumya {
+  font-size: 2em;
+  color: #333;
+  margin-bottom: 5px;
+}
+
+.developer.block > div > div:last-child h4#Your-Host {
+  font-size: 1.2em;
+  color: #ff6f61;
+  margin-bottom: 20px;
+}
+
+.developer.block > div > div:last-child h3 {
+  display: inline-block;
+  background-color:#604652 ;
+  color: white;
+  padding: 6px 12px;
+  margin: 6px 6px 0 0;
+  border-radius: 6px;
+  font-size: 0.9em;
+}
+
+.developer.block > div > div:last-child p {
+  font-size: 1em;
+  color: #555;
+  line-height: 1.6;
+  margin-bottom: 12px;
+}
+
+.developer.block > div > div:last-child p {
+  font-style: italic;
+  color: #f6d5a5;
+}
+
+/* === Tablet (768px – 1024px) === */
+@media (max-width: 1024px) and (min-width: 768px) {
+  .developer.block > div {
+    flex-direction: row;
+    flex-wrap: wrap;
+    gap: 20px;
+    height: auto;
+  }
+
+  .developer.block > div > div:first-child picture img {
+    width: 320px;
+    height: 180px;
+  }
+
+  .developer-wrapper {
+    width: 90%;
+    padding: 24px;
+  }
+}
+
+/* === Mobile (<768px) === */
+@media (max-width: 767px) {
+  .developer.block > div {
+    flex-direction: column;
+    align-items: center;
+    height: auto;
+    gap: 20px;
+  }
+
+  .developer-wrapper {
+    padding: 16px;
+    width: 95%;
+  }
+
+  .developer.block > div > div:first-child picture img {
+    width: 160px;
+    height: 160px;
+  }
+
+  .default-content-wrapper h2 {
+    font-size: 2rem;
+  }
+
+  .developer.block > div > div:last-child h1#saumya {
+    font-size: 1.5em;
+  }
+
+  .developer.block > div > div:last-child h3 {
+    font-size: 0.8em;
+  }
+
+  .developer.block > div > div:last-child p {
+    font-size: 0.95em;
+  }
+}

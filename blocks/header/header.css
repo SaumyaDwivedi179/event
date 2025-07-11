@@ -1,9 +1,3 @@
-/* ---------------------- */
-
-/* HEADER LAYOUT STYLES  */
-
-/* ---------------------- */
-
 header .nav-wrapper {
   background-color: #604652;
   width: 100%;
@@ -51,12 +45,6 @@ header nav[aria-expanded='true'] {
   }
 }
 
-/* ---------------------- */
-
-/* COMMON TEXT STYLING   */
-
-/* ---------------------- */
-
 header nav p {
   margin: 0;
   line-height: 1;
@@ -64,13 +52,8 @@ header nav p {
 
 header nav a:any-link {
   color: currentcolor;
+  text-decoration: none;
 }
-
-/* ---------------------- */
-
-/* HAMBURGER MENU STYLES */
-
-/* ---------------------- */
 
 header nav .nav-hamburger {
   grid-area: hamburger;
@@ -105,7 +88,6 @@ header nav .nav-hamburger-icon::after {
   background: currentcolor;
 }
 
-/* Hamburger closed */
 header nav[aria-expanded='false'] .nav-hamburger-icon,
 header nav[aria-expanded='false'] .nav-hamburger-icon::before,
 header nav[aria-expanded='false'] .nav-hamburger-icon::after {
@@ -121,7 +103,6 @@ header nav[aria-expanded='false'] .nav-hamburger-icon::after {
   top: 6px;
 }
 
-/* Hamburger open */
 header nav[aria-expanded='true'] .nav-hamburger-icon {
   height: 22px;
 }
@@ -151,11 +132,6 @@ header nav[aria-expanded='true'] .nav-hamburger-icon::after {
   }
 }
 
-/* ---------------------- */
-
-/* BRAND LOGO / NAME     */
-
-/* ---------------------- */
 
 header .nav-brand {
   grid-area: brand;
@@ -173,9 +149,16 @@ header .nav-brand .default-content-wrapper {
   margin-top: 15px;
 }
 
-.default-content-wrapper h1{
+header .nav-brand .default-content-wrapper h1{
   color: #bab5b5;
   margin-bottom: 50px;
+}
+
+header .nav-brand .default-content-wrapper h1:hover{
+  border-radius: 20px;
+  background:#423038;
+  color: #bd8345;
+
 }
 
 header nav .nav-brand img {
@@ -183,12 +166,6 @@ header nav .nav-brand img {
   height: auto;
  margin: unset;
 }
-
-/* ---------------------- */
-
-/* NAV SECTIONS STYLING  */
-
-/* ---------------------- */
 
 header nav .nav-sections {
   grid-area: sections;
@@ -203,7 +180,7 @@ header nav[aria-expanded='true'] .nav-sections {
   visibility: visible;
   align-self: start;
           display: flex;
-        justify-content: flex-end;
+        justify-content:center;
  
 }
 
@@ -218,6 +195,10 @@ header nav .nav-sections ul {
 
 header nav .nav-sections ul > li {
   font-weight: 500;
+  display: flex;
+  flex-direction: row;
+  gap: 50px;
+ 
   
 }
 
@@ -227,6 +208,21 @@ header nav .nav-sections ul > li > ul {
   margin: 10px;
   
 }
+
+.nav-dropdown-item {
+  display: flex;
+  flex-direction: column;
+  font-size: 14px;
+  color: #de2121;
+}
+
+header nav .nav-sections ul > li:hover{
+  border-radius: 20px;
+  background:#423038;
+  color: #bd8345;
+}
+
+
 
 header nav .nav-sections ul > li > ul > li {
   font-weight: 400;
@@ -243,6 +239,7 @@ header nav .nav-sections ul > li > ul > li {
   header nav[aria-expanded='true'] .nav-sections {
     align-self: unset;
     display: flex;
+    justify-content: flex-end;
   }
 
   /* Dropdown trigger */
@@ -374,17 +371,6 @@ header nav .nav-tools {
 
 
 
-/* Each column/item */
-.nav-dropdown-item {
-  display: flex;
-  flex-direction: column;
-  font-size: 14px;
-  color: #de2121;
-}
-
-
-
-
 /* Nested items */
 .nav-dropdown-item > .nav-dropdown > li {
   list-style: none;
@@ -405,3 +391,21 @@ header nav .nav-tools {
 
 
 
+@media (width <= 768px) {
+  header .nav-brand .default-content-wrapper {
+    /* flex-direction: column; */
+    align-items: center;
+    text-align: center;
+    gap: 8px;
+  }
+
+  header .nav-brand picture img {
+    width: 50px;
+  }
+
+  header .nav-brand h1 {
+    font-size: 1.5rem;
+    margin-bottom: 30px;
+  }
+
+}
