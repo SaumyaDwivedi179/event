@@ -216,6 +216,17 @@ header nav .nav-sections ul > li > ul {
   color: #de2121;
 }
 
+header nav .nav-sections ul > li > ul > li {
+  font-weight: 400;
+}
+
+/* Nested items */
+.nav-dropdown-item > .nav-dropdown > li {
+  list-style: none;
+  font-size: 14px;
+  color: #333;
+}
+
 header nav .nav-sections ul > li:hover{
   border-radius: 20px;
   background:#423038;
@@ -224,9 +235,16 @@ header nav .nav-sections ul > li:hover{
 
 
 
-header nav .nav-sections ul > li > ul > li {
-  font-weight: 400;
+.nav-dropdown-item > .nav-dropdown > li:hover {
+  color: #bf5f45;
+  cursor: pointer;
 }
+
+
+
+
+
+
 
 /* Desktop nav sections */
 @media (width >= 900px) {
@@ -369,19 +387,6 @@ header nav .nav-tools {
 
 
 
-
-
-/* Nested items */
-.nav-dropdown-item > .nav-dropdown > li {
-  list-style: none;
-  font-size: 14px;
-  color: #333;
-}
-
-.nav-dropdown-item > .nav-dropdown > li:hover {
-  color: #bf5f45;
-  cursor: pointer;
-}
 
 
 .nav-wrapper nav .section.form-container .form-wrapper {
