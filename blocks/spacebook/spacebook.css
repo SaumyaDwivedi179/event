@@ -94,6 +94,7 @@
   cursor: pointer;
   color: #e0d8d3;
 }
+
 /* Smooth fade-in animation */
 @media (width <= 768px) {
   .spacebook.block > div > div:last-child {
