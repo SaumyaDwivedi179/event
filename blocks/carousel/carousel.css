@@ -123,6 +123,7 @@
   padding: 0;
   background-color: rgb(19 19 19 / 25%);
   transition: background-color 0.2s;
+  margin: 0 -12px;
 }
  
 .carousel .carousel-navigation-buttons button:hover,
@@ -159,8 +160,9 @@
   }
  
   .carousel .carousel-slide .carousel-slide-content {
-    max-width: 90%;
+    max-width: 80%;
     padding: 20px 0;
+    margin-top: 20px;
   }
  
   .carousel .carousel-slide .carousel-slide-image picture {
@@ -176,7 +178,7 @@
   position: absolute;
   top: 80%; /* adjust as needed */
   left: 10%; /* adjust as needed */
-  background: rgb(246 225 206 / 95%);
+  background: rgb(246 225 206);
   padding: 20px 30px;
   max-width: 300px;
   box-shadow: 0 4px 8px rgb(0 0 0 / 10%);
